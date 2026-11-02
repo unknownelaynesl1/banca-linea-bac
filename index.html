@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAC Credomatic Guatemala - Banca en Línea</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Resplandor dinámico que sigue al cursor -->
+    <div id="cursor-glow"></div>
+
+    <!-- Encabezado Rojo Institucional BAC con Logo Grande -->
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-box">
+                <img src="assets/logo-bac.png" alt="BAC Logo" class="logo" onerror="this.src='https://via.placeholder.com/180x50/ffffff/E31837?text=BAC+Credomatic'">
+            </div>
+            <span class="brand-divider">|</span>
+            <span class="brand-title">Banca en Línea</span>
+        </div>
+        <nav id="top-nav">
+            <button id="btn-show-services" class="nav-btn" onclick="showSection('services-section')">Servicios</button>
+            <button id="btn-show-register" class="nav-btn" onclick="showSection('register-section')">Registrarse</button>
+            <button id="btn-show-login" class="nav-btn btn-login-nav" onclick="showSection('login-section')">Iniciar Sesión</button>
+            <button id="btn-logout" class="nav-btn hidden" onclick="logout()">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <main class="main-container">
+
+        <!-- SECCIÓN 1: Servicios Bancarios con Carrusel -->
+        <section id="services-section" class="card hero-card">
+            
+            <div class="hero-split-container">
+                
+                <!-- COLUMNA IZQUIERDA: Texto Informativo y Servicios -->
+                <div class="hero-left-content">
+                    <span class="badge-tag">BAC GUATEMALA</span>
+                    <h1>Bienvenido a la nueva Banca Digital</h1>
+                    <p>Una experiencia rápida, intuitiva y segura para gestionar tu dinero en Quetzales desde cualquier lugar.</p>
+                    
+                    <div class="services-list-vertical">
+                        <div class="service-item">
+                            <div class="service-icon">💳</div>
+                            <div>
+                                <h3>Cuentas de Ahorro y Monetarias</h3>
+                                <p>Administra tu dinero en Quetzales con disponibilidad inmediata y rendimiento garantizado.</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">⚡</div>
+                            <div>
+                                <h3>Transferencias Inmediatas</h3>
+                                <p>Envía fondos a cualquier cuenta de forma rápida, segura y las 24 horas.</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">💡</div>
+                            <div>
+                                <h3>Pago de Servicios</h3>
+                                <p>Paga facturas de luz (EEGSA/Energuate), agua, internet y telefonía en segundos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMNA DERECHA: Carrusel de Anuncios PNG -->
+                <div class="carousel-container">
+                    <div class="carousel-slide active">
+                        <img src="assets/promo1.png" alt="Promo 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="assets/promo2.png" alt="Promo 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="assets/promo3.png" alt="Promo 3">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="assets/promo4.png" alt="Promo 4">
+                    </div>
+
+                    <div class="carousel-dots">
+                        <span class="dot active" onclick="currentSlide(0)"></span>
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SECCIÓN INTERNA: Nuestras Plataformas -->
+            <div class="platforms-section">
+                <h2>Nuestras plataformas</h2>
+                <p class="platforms-subtitle">Estas son nuestras plataformas de servicios para ti</p>
+                
+                <div class="platforms-grid">
+                    <div class="platform-card" onclick="showSection('noticias-section')">
+                        <div class="platform-icon">📢</div>
+                        <span>Noticias</span>
+                    </div>
+                    <div class="platform-card" onclick="showSection('seguridad-section')">
+                        <div class="platform-icon">🛡️</div>
+                        <span>Seguridad</span>
+                    </div>
+                    <div class="platform-card" onclick="showSection('tutoriales-section')">
+                        <div class="platform-icon">🎓</div>
+                        <span>Tutoriales</span>
+                    </div>
+                    <div class="platform-card" onclick="showSection('micasa-section')">
+                        <div class="platform-icon">🏠</div>
+                        <span>Mi Casa 360</span>
+                    </div>
+                    <div class="platform-card" onclick="showSection('ubicanos-section')">
+                        <div class="platform-icon">📍</div>
+                        <span>Ubícanos</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SECCIÓN: NOTICIAS BAC -->
+        <section id="noticias-section" class="card hidden">
+            <button class="btn-back" onclick="showSection('services-section')">← Volver a Servicios</button>
+            <div class="subpage-header">
+                <h2>📢 Noticias y Novedades BAC Guatemala</h2>
+                <p>Mantente al día con nuestras innovaciones, beneficios y actualizaciones tecnológicas.</p>
+            </div>
+
+            <div class="news-grid">
+                <article class="news-item">
+                    <img src="assets/Noticia1.png" alt="Banca Móvil BAC" class="subpage-img" onerror="this.src='https://via.placeholder.com/400x200/E31837/FFFFFF?text=Noticia+1'">
+                    <span class="news-date">2 de Noviembre, 2026</span>
+                    <h3>Lanzamiento de la nueva app de Banca Digital</h3>
+                    <p>Gestiona tus cuentas, consulta tus saldos en Quetzales y realiza transferencias inmediatas de manera intuitiva desde tu dispositivo móvil.</p>
+                </article>
+
+                <article class="news-item">
+                    <img src="assets/Noticia2.png" alt="VAS y Parqueos BAC" class="subpage-img" onerror="this.src='https://via.placeholder.com/400x200/E31837/FFFFFF?text=Noticia+2'">
+                    <span class="news-date">28 de Octubre, 2026</span>
+                    <h3>Paga tus peajes y parqueos sin filas</h3>
+                    <p>Con tu Sticker BAC muévete rápidamente por toda la ciudad e ingresa de forma automatizada a más de 130 parqueos afiliados y peajes de la VAS.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: SEGURIDAD BAC -->
+        <section id="seguridad-section" class="card hidden">
+            <button class="btn-back" onclick="showSection('services-section')">← Volver a Servicios</button>
+            <div class="subpage-header">
+                <h2>🛡️ Centro de Seguridad Bancaria</h2>
+                <p>Tu tranquilidad es nuestra prioridad. Sigue estas recomendaciones para proteger tus datos.</p>
+            </div>
+
+            <div class="security-info">
+                <div class="security-card">
+                    <h3>🔒 Claves de Seguridad</h3>
+                    <p>BAC Credomatic nunca te solicitará tus contraseñas, PIN ni tokens por correo electrónico o llamada telefónica.</p>
+                </div>
+                <div class="security-card">
+                    <h3>📲 Notificaciones Inmediatas</h3>
+                    <p>Activa las alertas SMS y por correo electrónico para recibir notificaciones al instante sobre cada movimiento de tu cuenta.</p>
+                </div>
+                <div class="security-card">
+                    <h3>🌐 Verificación de Sitio Seguro</h3>
+                    <p>Asegúrate de comprobar la dirección del navegador antes de ingresar tu usuario y contraseña de prueba.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: TUTORIALES BAC -->
+        <section id="tutoriales-section" class="card hidden">
+            <button class="btn-back" onclick="showSection('services-section')">← Volver a Servicios</button>
+            <div class="subpage-header">
+                <h2>🎓 Tutoriales e Instrucciones de Uso</h2>
+                <p>Aprende paso a paso cómo sacarle el máximo provecho a tu Banca en Línea.</p>
+            </div>
+
+            <div class="tutorials-grid">
+                <div class="tutorial-item">
+                    <div class="step-badge">Paso 1</div>
+                    <h3>Cómo realizar transferencias</h3>
+                    <p>Ingresa a tu cuenta, selecciona la opción "Transferencias", digita el número de cuenta destino en Quetzales y confirma el monto.</p>
+                </div>
+                <div class="tutorial-item">
+                    <div class="step-badge">Paso 2</div>
+                    <h3>Pago de Servicios Públicos</h3>
+                    <p>Accede a "Pago de Servicios", elige tu proveedor (EEGSA, Energuate, Empagua, Claro/Tigo) e ingresa tu correlativo o contador.</p>
+                </div>
+                <div class="tutorial-item">
+                    <div class="step-badge">Paso 3</div>
+                    <h3>Generar Estado de Cuenta</h3>
+                    <p>En el panel principal presiona "Imprimir Estado de Cuenta" para obtener el comprobante detallado de tu historial.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: MI CASA 360 -->
+        <section id="micasa-section" class="card hidden">
+            <button class="btn-back" onclick="showSection('services-section')">← Volver a Servicios</button>
+            <div class="subpage-header">
+                <h2>🏠 Mi Casa 360 - Créditos Hipotecarios</h2>
+                <p>Haz realidad el sueño de tu propia vivienda con las mejores tasas en Quetzales.</p>
+            </div>
+
+            <div class="micasa-content">
+                <div class="micasa-box">
+                    <h3>Beneficios del Programa Mi Casa 360 BAC</h3>
+                    <ul>
+                        <li>Hasta 25 años de financiamiento.</li>
+                        <li>Tasas de interés preferenciales.</li>
+                        <li>Pre-calificación de crédito de forma digital e inmediata.</li>
+                    </ul>
+                    <button class="btn-primary" style="margin-top: 15px;" onclick="alert('Solicitud enviada a un asesor BAC. Te contactaremos pronto.')">Solicitar Información de Crédito</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: UBÍCANOS -->
+        <section id="ubicanos-section" class="card hidden">
+            <button class="btn-back" onclick="showSection('services-section')">← Volver a Servicios</button>
+            <div class="subpage-header">
+                <h2>📍 Agencias y Cajeros BAC en Guatemala</h2>
+                <p>Encuentra el punto de atención o cajero automático más cercano a ti.</p>
+            </div>
+
+            <div class="ubicanos-grid">
+                <div class="location-card">
+                    <h3>Agencia Central BAC</h3>
+                    <p><strong>Dirección:</strong> Avenida La Reforma 9-55, Zona 10, Ciudad de Guatemala.</p>
+                    <p><strong>Horario:</strong> Lunes a Viernes de 9:00 AM a 6:00 PM</p>
+                </div>
+                <div class="location-card">
+                    <h3>Agencia Pradera Concepción</h3>
+                    <p><strong>Dirección:</strong> KM 15.5 Carretera a El Salvador, Centro Comercial Pradera Concepción.</p>
+                    <p><strong>Horario:</strong> Lunes a Domingo de 10:00 AM a 7:00 PM</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: Registro de Cliente -->
+        <section id="register-section" class="card hidden">
+            <h2>Registro de Nuevo Cliente</h2>
+            <form id="register-form" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label>Nombre Completo:</label>
+                    <input type="text" id="reg-name" required placeholder="Ej. Juan Pérez">
+                </div>
+                <div class="form-group">
+                    <label>Correo Electrónico:</label>
+                    <input type="email" id="reg-email" required placeholder="correo@ejemplo.com">
+                </div>
+                <div class="form-group">
+                    <label>Usuario:</label>
+                    <input type="text" id="reg-username" required placeholder="Crea un usuario">
+                </div>
+                <div class="form-group">
+                    <label>Contraseña:</label>
+                    <input type="password" id="reg-password" required placeholder="Crea una contraseña">
+                </div>
+                <div class="form-group">
+                    <label>Saldo Inicial (Q):</label>
+                    <input type="number" id="reg-balance" min="50" step="0.01" required value="1000.00">
+                </div>
+                <button type="submit" class="btn-primary">Completar Registro</button>
+            </form>
+        </section>
+
+        <!-- SECCIÓN: Inicio de Sesión -->
+        <section id="login-section" class="card hidden">
+            <h2>Ingreso a Banca en Línea</h2>
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Usuario:</label>
+                    <input type="text" id="login-user" required placeholder="Usuario (Prueba: admin)">
+                </div>
+                <div class="form-group">
+                    <label>Contraseña:</label>
+                    <input type="password" id="login-pass" required placeholder="Contraseña (Prueba: 2026)">
+                </div>
+                <button type="submit" class="btn-primary">Ingresar</button>
+            </form>
+        </section>
+
+        <!-- SECCIÓN: Panel del Cliente (Dashboard con Foto de Perfil) -->
+        <section id="dashboard-section" class="card hidden">
+            <div class="dashboard-header">
+                <div class="user-profile-info">
+                    <div class="avatar-container" onclick="document.getElementById('avatar-input').click()">
+                        <img id="user-avatar" src="https://via.placeholder.com/80/eef2f6/94a3b8?text=👤" alt="Foto de Perfil">
+                        <div class="avatar-overlay">📷</div>
+                    </div>
+                    <input type="file" id="avatar-input" accept="image/*" class="hidden" onchange="handleAvatarUpload(event)">
+                    
+                    <div>
+                        <h2 id="client-name">Bienvenido, Usuario</h2>
+                        <p>Cuenta No: <strong id="account-number">BAC-001092</strong></p>
+                    </div>
+                </div>
+
+                <div class="balance-box">
+                    <span>Saldo Disponible</span>
+                    <h3 id="client-balance">Q0.00</h3>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="tab-buttons">
+                <button onclick="showTab('transfers-tab')">Transferencias</button>
+                <button onclick="showTab('services-tab')">Pago de Servicios</button>
+                <button onclick="showTab('movements-tab')">Movimientos</button>
+                <button onclick="generateStatement()">Imprimir Estado de Cuenta</button>
+            </div>
+
+            <div id="transfers-tab" class="tab-content">
+                <h3>Realizar Transferencia</h3>
+                <form onsubmit="handleTransfer(event)">
+                    <div class="form-group">
+                        <label>Cuenta Destino:</label>
+                        <input type="text" id="trans-account" required placeholder="Número de cuenta destino">
+                    </div>
+                    <div class="form-group">
+                        <label>Monto (Q):</label>
+                        <input type="number" id="trans-amount" min="1" step="0.01" required placeholder="0.00">
+                    </div>
+                    <button type="submit" class="btn-primary">Transferir</button>
+                </form>
+            </div>
+
+            <div id="services-tab" class="tab-content hidden">
+                <h3>Pago de Servicios Públicos y Privados</h3>
+                <form onsubmit="handlePayService(event)">
+                    <div class="form-group">
+                        <label>Tipo de Servicio:</label>
+                        <select id="service-type" required>
+                            <option value="Electricidad">Electricidad (EEGSA / Energuate)</option>
+                            <option value="Agua Potable">Agua Potable (EMPAGUA / Municipal)</option>
+                            <option value="Telefonía e Internet">Telefonía / Internet (Claro / Tigo)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Número de Referencia / Contador:</label>
+                        <input type="text" id="service-ref" required placeholder="Ej. 98765432">
+                    </div>
+                    <div class="form-group">
+                        <label>Monto a Pagar (Q):</label>
+                        <input type="number" id="service-amount" min="1" step="0.01" required placeholder="0.00">
+                    </div>
+                    <button type="submit" class="btn-primary">Pagar Servicio</button>
+                </form>
+            </div>
+
+            <div id="movements-tab" class="tab-content hidden">
+                <h3>Historial de Movimientos</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Descripción</th>
+                            <th>Tipo</th>
+                            <th>Monto</th>
+                        </tr>
+                    </thead>
+                    <tbody id="movements-list">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
